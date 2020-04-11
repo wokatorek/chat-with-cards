@@ -35,9 +35,21 @@ app.get('/makao/panic', (req, res) => {
     res.send("ok");
 });
 
-// Get PORT and start the server
-// const server = http.createServer(app).listen(8080,  function () {
-const server = http.createServer(app).listen(process.env.ALWAYSDATA_HTTPD_PORT, process.env.ALWAYSDATA_HTTPD_IP, function () {
+const server = http.createServer(app).listen(constants.HOST_PORT, constants.HOST_IP, function () {
+    printBanner();
+    logger.info(`Listening on port ${constants.HOST_PORT}`);
+    profileApi.setProfile();
+    if(constants.DB_HOST !== undefined) {
+        db.query('SELECT * FROM users', (error, results) => {
+            if (error) {
+                throw error
+            }
+            logger.info("found user: %s", JSON.stringify(results.rows));
+        });
+    }
+});
+
+function printBanner(){
     logger.info(`===================================`);
     logger.info(`.------..------..------..------..------.`);
     logger.info(`|M.--. ||A.--. ||K.--. ||A.--. ||O.--. |`);
@@ -46,12 +58,4 @@ const server = http.createServer(app).listen(process.env.ALWAYSDATA_HTTPD_PORT, 
     logger.info(`| '--'M|| '--'A|| '--'K|| '--'A|| '--'O|`);
     logger.info(`\`------'\`------'\`------'\`------'\`------'`);
     logger.info(`===================================`);
-    logger.info(`Listening on port ${process.env.ALWAYSDATA_HTTPD_PORT}`);
-    // profileApi.setProfile();
-    db.query('SELECT * FROM users', (error, results) => {
-        if (error) {
-            throw error
-        }
-        logger.info("found user: %s", JSON.stringify(results.rows));
-    })
-});
+}

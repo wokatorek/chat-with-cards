@@ -1,10 +1,12 @@
-exports.FB_PAGE_TOKEN = '';
-exports.VERIFY_TOKEN = "";
-exports.DB_HOST = '';
-exports.DB_PORT = '';
-exports.DB_PASSWORD = '';
-exports.DB_USER = '';
-exports.DB_NAME = '';
+exports.FB_PAGE_TOKEN = process.env.FB_PAGE_TOKEN;
+exports.VERIFY_TOKEN = process.env.VERIFY_TOKEN;
+exports.DB_HOST = process.env.DB_HOST;
+exports.DB_PORT = process.env.DB_PORT;
+exports.DB_PASSWORD = process.env.DB_PASSWORD;
+exports.DB_USER = process.env.DB_USER;
+exports.DB_NAME = process.env.DB_NAME;
+exports.HOST_PORT = process.env.ALWAYSDATA_HTTPD_PORT;
+exports.HOST_IP = process.env.ALWAYSDATA_HTTPD_IP;
 exports.HELP_STRING = "Jeśli chcesz rozpocząć nową grę, napisz \"Nowa\". Opcjonalnie możesz wskazać liczbę talii, np. \"Nowa 2\" dla gry z dwiema taliami. Talie nie zawierają jokerów.\nJeśli chcesz dołączyć do gry napisz \"Dołącz id_gry\"";
 exports.HELP_MORE = `Dostępne komendy. Wielkie litery nie mają znaczenia. Parametr w nawiasach okrągłych jest wymagany; parametr w nawiasach kwadratowych jest opcjonalny.
 Aby dowiedzieć się więcej napisz "pomoc (komenda)"
