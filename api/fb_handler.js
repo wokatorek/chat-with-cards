@@ -7,6 +7,7 @@ const makaoCommandInterface = new MakaoCommandInterface();
 
 exports.handleWebhookGet = function handleWebhookGet(req, res) {
     // Parse the query params
+    logger.debug("DUMP WEBHOOK EVENT: %s", JSON.stringify(req))
     let mode = req.query['hub.mode'];
     let token = req.query['hub.verify_token'];
     let challenge = req.query['hub.challenge'];

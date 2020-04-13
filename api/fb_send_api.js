@@ -20,7 +20,6 @@ exports.sendMessage = function sendMessage(sender_psid, message) {
 
 // Sends response messages via the Send API
 exports.sendMessageWithButtons = function sendMessageWithButtons(sender_psid, title, message, buttons) {
-    logger.debug('Sending message to %d with body: %s', sender_psid, JSON.stringify(message));
     // Construct the message body
     let request_body = {
         "recipient": {
