@@ -1,6 +1,6 @@
-const logger = require('../utils/logging.js').getLogger('fb_send_api.js');
+const logger = require('../utils/logging').getLogger('fb_send_api');
 const request = require('request');
-const constants = require('../utils/constants.js');
+const constants = require('../utils/constants');
 
 // Sends response messages via the Send API
 exports.sendMessage = function sendMessage(sender_psid, message) {

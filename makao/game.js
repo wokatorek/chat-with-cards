@@ -1,8 +1,8 @@
-const logger = require('../utils/logging.js').getLogger('game.js');
-const Card = require('./card.js');
-const sendApi = require('../api/fb_send_api.js');
+const logger = require('../utils/logging').getLogger('game');
+const Card = require('./card');
+const sendApi = require('../api/fb_send_api');
 const util = require('util');
-const makaoUtils = require('../utils/makaoUtils.js');
+const makaoUtils = require('../utils/makaoUtils');
 
 module.exports = class Game {
     constructor(id, owner, decks) {

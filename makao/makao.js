@@ -1,11 +1,11 @@
-const logger = require('../utils/logging.js').getLogger('makao.js');
-const constants = require('../utils/constants.js');
-const Player = require('./player.js');
-const Game = require('./game.js');
-const makaoUtils = require('../utils/makaoUtils.js');
+const logger = require('../utils/logging').getLogger('makao');
+const constants = require('../utils/constants');
+const Player = require('./player');
+const Game = require('./game');
+const makaoUtils = require('../utils/makaoUtils');
 const util = require('util');
-const sendApi = require('../api/fb_send_api.js');
-const db = require('../db/db.js').pool;
+const sendApi = require('../api/fb_send_api');
+const db = require('../db/db').pool;
 
 module.exports = class Makao {
     constructor() {

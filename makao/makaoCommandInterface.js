@@ -1,9 +1,9 @@
-const logger = require('../utils/logging.js').getLogger('makaoCommandInterface.js');
-const constants = require('../utils/constants.js');
-const makaoUtils = require('../utils/makaoUtils.js');
+const logger = require('../utils/logging').getLogger('makaoCommandInterface');
+const constants = require('../utils/constants');
+const makaoUtils = require('../utils/makaoUtils');
 const util = require('util');
-const sendApi = require('../api/fb_send_api.js');
-const Makao = require('./makao.js');
+const sendApi = require('../api/fb_send_api');
+const Makao = require('./makao');
 
 module.exports = class MakaoCommandInterface {
     constructor() {

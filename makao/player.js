@@ -1,6 +1,6 @@
-const logger = require('../utils/logging.js').getLogger('player.js');
-const constants = require('../utils/constants.js');
-const profileApi = require('../api/fb_profile_api.js');
+const logger = require('../utils/logging').getLogger('player');
+const constants = require('../utils/constants');
+const profileApi = require('../api/fb_profile_api');
 const util = require('util');
 
 module.exports = class Player {

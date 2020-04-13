@@ -2,9 +2,9 @@
 // "last_name":"Invigilation",
 // "profile_pic":"https:\/\/scontent.xx.fbcdn.net\/v\/t31.0-1\/p720x720\/10733713_10150004552801937_4553731092814901385_o.jpg?_nc_cat=1&_nc_sid=12b3be&_nc_ohc=zX6Oan9FVnIAX9uTAlM&_nc_ht=scontent.xx&_nc_tp=6&oh=2c58b93eebfde405735a1386314da561&oe=5E998EE1",
 // "id":"2952509728138624"}
-const logger = require('../utils/logging.js').getLogger('fb_profile_api.js');
+const logger = require('../utils/logging').getLogger('fb_profile_api');
 const request = require('request');
-const constants = require('../utils/constants.js');
+const constants = require('../utils/constants');
 
 exports.getProfile = function getProfile(psid, player) {
     request({

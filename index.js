@@ -1,13 +1,13 @@
-const logging = require('./utils/logging.js');
-const logger = logging.getLogger('index.js');
+const logging = require('./utils/logging');
+const logger = logging.getLogger('index');
 const http = require("http");
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express().use(bodyParser.json());
-const fbHandler = require('./api/fb_handler.js');
-const profileApi = require('./api/fb_profile_api.js');
-const constants = require('./utils/constants.js');
-const Makao = require('./makao/makao.js');
+const fbHandler = require('./api/fb_handler');
+const profileApi = require('./api/fb_profile_api');
+const constants = require('./utils/constants');
+const Makao = require('./makao/makao');
 const makao = new Makao();
 const db = require('./db/db').pool;
 

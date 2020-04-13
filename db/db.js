@@ -1,5 +1,5 @@
 const Pool = require('pg').Pool
-const logger = require('../utils/logging.js').getLogger('db');
+const logger = require('../utils/logging').getLogger('db');
 const constants = require('../utils/constants');
 
 const pool = new Pool({

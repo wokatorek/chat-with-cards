@@ -1,5 +1,5 @@
-const logger = require('../utils/logging.js').getLogger('card.js');
-const constants = require('../utils/constants.js');
+const logger = require('../utils/logging').getLogger('card');
+const constants = require('../utils/constants');
 const util = require('util');
 
 module.exports = class Card {

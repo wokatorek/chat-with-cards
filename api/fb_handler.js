@@ -1,8 +1,8 @@
-const logging = require('../utils/logging.js');
-const logger = logging.getLogger('fb_handler.js');
-const constants = require('../utils/constants.js');
-const MakaoCommandInterface = require('../makao/makaoCommandInterface.js');
-const sendApi = require('./fb_send_api.js');
+const logging = require('../utils/logging');
+const logger = logging.getLogger('fb_handler');
+const constants = require('../utils/constants');
+const MakaoCommandInterface = require('../makao/makaoCommandInterface');
+const sendApi = require('./fb_send_api');
 const makaoCommandInterface = new MakaoCommandInterface();
 
 exports.handleWebhookGet = function handleWebhookGet(req, res) {

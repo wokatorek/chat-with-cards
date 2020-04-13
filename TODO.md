@@ -1,7 +1,7 @@
 TODO:
 MUST:
-- db connection
-- persist games in DB
+- persist state in DB
+- dump JSON webhook events to log for mocks
 - zagraj karta karta nie zagrało mi karty (jedna z tych kart to była figura, może to to?)
 - greet ze statusem (witaj po raz pierwszy, witaj ponownie, czy jesteś w grze, czy masz coś na ręce)
 - info ile dobrałeś kart zanim napiszesz jakie karty
