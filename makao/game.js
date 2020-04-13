@@ -68,7 +68,7 @@ module.exports = class Game {
         }
         this.savePlayer(thePlayer);
         this.broadcastApart(util.format("%s dobrał %d kart", player.firstName, n), player);
-        sendApi.sendMessage(player.id, util.format("Dobrałeś karty: %s", cardsString));
+        sendApi.sendMessage(player.id, util.format("Dobrałeś: %s", cardsString));
     }
 
     savePlayer(player) {
@@ -160,6 +160,17 @@ module.exports = class Game {
             this._deck.push(...cards);
             this._deck = makaoUtils.shuffle(this._deck);
         }
+    }
+
+    shuffleStack(player) {
+        if (this._stack.length < 2) {
+            sendApi.sendMessage("Nie możesz przetasować gdy na stosie jest tylko jedna karta.")
+            return
+        }
+        let removed = this._stack.splice(1);
+        removed = makaoUtils.shuffle(removed);
+        this._deck = this._deck.concat(removed);
+        this.broadcastApart(util.format("%s przetasował stos. ", player.profile.firstName))
     }
 
     moveOwnership() {

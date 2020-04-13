@@ -3,8 +3,6 @@ MUST:
 - persist state in DB on sigterm
 - zagraj karta karta nie zagrało mi karty (jedna z tych kart to była figura, może to to?)
 - greet ze statusem (witaj po raz pierwszy, witaj ponownie, czy jesteś w grze, czy masz coś na ręce)
-- info ile dobrałeś kart zanim napiszesz jakie karty
-- komenda przetasuj (bierze ze stosu wszystkie oprócz najnowszej, tasuje i wkłada na spód talii, nie można przetasować gdy na stosie mniej niż 40 kart)
 - dlaczego zagraj dwie karty nie działa
 - komendy specjalne: żądam
 - bezpłciowe broadcasty
@@ -18,6 +16,7 @@ SHOULD:
 - auth status and panic
 
 COULD:
+- ludzkie info ile dobrałeś kart zanim napiszesz jakie karty
 - transtlations + language picking?
 - tutorial video/w chacie?
 - game log?

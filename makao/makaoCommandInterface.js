@@ -44,6 +44,8 @@ module.exports = class MakaoCommandInterface {
             this._makao.showLast15InStack(player);
         } else if (/^gracze\s*$/i.test(message) || /^kto gra\s*$/i.test(message)) {
             this._makao.showPlayers(player);
+        } else if (/^przetasuj\s*$/i.test(message)) {
+            this._makao.shuffleStack(player);
         } else {
             logger.info('Message %s from user %d did not match any command.', message, sender_psid);
             if (player.needsGreet) {

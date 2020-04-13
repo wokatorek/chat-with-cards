@@ -178,6 +178,16 @@ module.exports = class Makao {
         }
     }
 
+    shuffleStack(player) {
+        let game = this.findGameByUser(player);
+        if (game) {
+            logger.info("User %d shuffles deck", player.id);
+            game.shuffleStack(player);
+        } else {
+            sendApi.sendMessage(player.id, "Nie należysz do żadnej gry");
+        }
+    }
+
     setPlayerIsGreeted(player) {
         player.needsGreet = false;
         let index = this._users.findIndex(value => {
