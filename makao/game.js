@@ -164,13 +164,14 @@ module.exports = class Game {
 
     shuffleStack(player) {
         if (this._stack.length < 2) {
-            sendApi.sendMessage(player.id, "Nie możesz przetasować gdy na stosie nie ma żadnych albo jest tylko jedna karta.")
+            sendApi.sendMessage(player.id, "Nie możesz przetasować gdy na stosie nie ma żadnych albo jest tylko jedna karta.");
             return
         }
-        let removed = this._stack.splice(1);
+        let removed = this._stack.splice(0, this._stack.length - 1);
         removed = makaoUtils.shuffle(removed);
         this._deck = this._deck.concat(removed);
-        this.broadcastApart(util.format("%s przetasował stos zagranych kart.", player.profile.firstName))
+        sendApi.sendMessage(player.id, "Przetasowałeś zagrane karty.");
+        this.broadcastApart(util.format("%s przetasował stos zagranych kart.", player.profile.firstName), player);
     }
 
     moveOwnership() {
