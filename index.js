@@ -47,6 +47,10 @@ const server = http.createServer(app).listen(constants.HOST_PORT, constants.HOST
             logger.info("found user: %s", JSON.stringify(results.rows));
         });
     }
+    process.stdin.resume();
+    process.on('SIGTERM', () => {
+        logger.warn('Received SIGTERM.');
+    });
 });
 
 function printBanner(){
