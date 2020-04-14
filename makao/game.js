@@ -104,7 +104,11 @@ module.exports = class Game {
             this._stack.push({card: card, player_id: player.id});
         }
         if (playedCards.length > 0) {
-            sendApi.sendMessage(player.id, util.format("Zagrałeś %s", playedCards));
+            let playedCardsString = "";
+            playedCards.forEach(card => {
+                playedCardsString += util.format(" [%s%s]", card.value, card.suit);
+            })
+            sendApi.sendMessage(player.id, util.format("Zagrałeś%s", playedCardsString));
             this.broadcastApart(util.format("%s zagrał %s", player.firstName, cards), player);
         }
     }
