@@ -62,7 +62,7 @@ module.exports = class Game {
         let thePlayer = this._players[this.getPlayerIndex(player)];
         let cardsString = "";
         for (let i = 0; i < n; i++) {
-            let card = this._deck.pop();
+            let card = this._deck.splice(0,1);
             thePlayer.drawCard(card);
             cardsString += util.format("[%s%s] ", card.value, card.suit);
         }
@@ -168,8 +168,12 @@ module.exports = class Game {
             return
         }
         let removed = this._stack.splice(0, this._stack.length - 1);
-        removed = makaoUtils.shuffle(removed);
-        this._deck = this._deck.concat(removed);
+        let removedCards = [];
+        removed.forEach(card_player => {
+            removedCards.push(card_player.card);
+        });
+        removedCards = makaoUtils.shuffle(removedCards);
+        this._deck = this._deck.concat(removedCards);
         sendApi.sendMessage(player.id, "Przetasowałeś zagrane karty.");
         this.broadcastApart(util.format("%s przetasował stos zagranych kart.", player.profile.firstName), player);
     }
