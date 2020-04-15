@@ -3,7 +3,7 @@ MUST:
 - persist state in DB on sigterm
 - zagraj karta karta nie zagrało mi karty (jedna z tych kart to była figura, może to to?)
 - greet ze statusem (witaj po raz pierwszy, witaj ponownie, czy jesteś w grze, czy masz coś na ręce)
-- komendy specjalne: żądam
+- komendy specjalne: żądanie (żądam (kolor/karta) albo kolor (kolor) albo karta (karta))
 - bezpłciowe broadcasty
 - "ręka" leaks who played last card
 - komendy bez polskich znaków
