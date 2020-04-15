@@ -62,7 +62,7 @@ module.exports = class Game {
         let thePlayer = this._players[this.getPlayerIndex(player)];
         let cardsString = "";
         for (let i = 0; i < n; i++) {
-            let card = this._deck.splice(0,1);
+            let card = this._deck.splice(0,1)[0];
             thePlayer.drawCard(card);
             cardsString += util.format("[%s%s] ", card.value, card.suit);
         }
