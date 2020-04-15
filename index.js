@@ -29,6 +29,12 @@ app.get('/makao', (req, res) => {
     res.send("ok");
 });
 
+app.get('/profile', (req, res) => {
+    logger.info("Somebody requested profile!!");
+    profileApi.setProfile();
+    res.send("ok");
+});
+
 app.get('/makao/panic', (req, res) => {
     logger.info("Shutdown all games");
     makao.shutdown();
@@ -38,15 +44,14 @@ app.get('/makao/panic', (req, res) => {
 const server = http.createServer(app).listen(constants.HOST_PORT, constants.HOST_IP, function () {
     printBanner();
     logger.info(`Listening on port ${constants.HOST_PORT}`);
-    profileApi.setProfile();
-    if(constants.DB_HOST !== undefined) {
-        db.query('SELECT * FROM users', (error, results) => {
-            if (error) {
-                throw error
-            }
-            logger.info("found user: %s", JSON.stringify(results.rows));
-        });
-    }
+    // if(constants.DB_HOST !== undefined) {
+    //     db.query('SELECT * FROM users', (error, results) => {
+    //         if (error) {
+    //             throw error
+    //         }
+    //         logger.info("found user: %s", JSON.stringify(results.rows));
+    //     });
+    // }
     process.stdin.resume();
     process.on('SIGTERM', () => {
         logger.warn('Received SIGTERM.');
