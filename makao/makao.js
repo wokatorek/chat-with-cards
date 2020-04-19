@@ -45,7 +45,7 @@ module.exports = class Makao {
         let newGame = new Game(this.getUniqueGameId(), player, decks);
         logger.info("User " + player.id + " created a game with " + decks + " decks; id " + newGame.id);
         this._games.push(newGame);
-        this.sendMessage(player.id, util.format("Stworzyłeś nową grę o numerze: %d Przekaż numer gry znajomym aby do niej dołączyli (pisząc do mnie: Dołącz %d)", newGame.id, newGame.id));
+        this.sendMessage(player.id, util.format("Stworzyłeś nową grę o numerze: %d Przekaż numer gry znajomym aby do niej dołączyli (pisząc do mnie: 'Dołącz %d')", newGame.id, newGame.id));
     }
 
     joinGame(player, id) {
