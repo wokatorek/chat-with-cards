@@ -1,5 +1,6 @@
 TODO:
 MUST:
+- dołącz do gry: najpierw sprawdź, czy taka istnieje!
 - problemy z toString karty?
 - persist state in DB on sigterm
 - zagraj karta karta nie zagrało mi karty (jedna z tych kart to była figura, może to to?)

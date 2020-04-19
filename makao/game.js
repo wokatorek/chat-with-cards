@@ -151,6 +151,7 @@ module.exports = class Game {
         let index = this.getPlayerIndex(player);
         if (index > -1) {
             this.throwCardsBackInDeck(this._players[index].cards);
+            this._players[index].cards = [];
             this._players.splice(index, 1);
             this.broadcast(util.format("%s opuścił grę.", player.firstName));
             if (this._owner.id === player._id) {

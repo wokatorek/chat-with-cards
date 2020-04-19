@@ -49,12 +49,12 @@ module.exports = class Makao {
     }
 
     joinGame(player, id) {
-        this.leaveCurrentGame(player);
         let game;
         game = this.findGameById(parseInt(id));
         if (!game) {
             this.sendMessage(player.id, util.format("Gra numer %d nie istnieje", id));
         } else {
+            this.leaveCurrentGame(player);
             game.addPlayer(player);
             logger.info("User " + player.id + " joined a game with id " + id);
             this.sendMessage(player.id, util.format("Dołączyłeś do gry %d", id));
