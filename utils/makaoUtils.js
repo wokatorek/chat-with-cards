@@ -9,3 +9,24 @@ exports.shuffle = function shuffle(a) {
     }
     return a;
 };
+
+exports.parseValueFromString = function parseValueFromString(valueString) {
+    if (valueString.toUpperCase() === "A") {
+        return 14;
+    } else if (valueString.toUpperCase() === "K") {
+        return 13;
+    } else if (valueString.toUpperCase() === "Q") {
+        return 12;
+    } else if (valueString.toUpperCase() === "J") {
+        return 11;
+    } else {
+        return parseInt(valueString);
+    }
+}
+
+exports.isASuit = function isASuit(suitString) {
+    return constants.SUITS.CLUB.codePointAt(0) === suitString.codePointAt(0)
+        || constants.SUITS.DIAMOND.codePointAt(0) === suitString.codePointAt(0)
+        || constants.SUITS.HEART.codePointAt(0) === suitString.codePointAt(0)
+        || constants.SUITS.SPADE.codePointAt(0) === suitString.codePointAt(0);
+}

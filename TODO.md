@@ -3,6 +3,7 @@ MUST:
 - zagraj karta karta nie zagrało mi karty (jedna z tych kart to była figura, może to to?)
 - zagraj karta case insensitive
 - dołącz do gry: najpierw sprawdź, czy taka istnieje!
+- dołącz do gry: a co jeśli należę już do tej gry? :p
 - persist state in DB on sigterm
 - greet ze statusem (witaj po raz pierwszy, witaj ponownie, czy jesteś w grze, czy masz coś na ręce)
 - komendy specjalne: żądanie (żądam (kolor/karta) albo kolor (kolor) albo karta (karta))
