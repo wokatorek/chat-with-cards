@@ -38,6 +38,7 @@ module.exports = class MakaoCommandInterface {
             this._makao.play(player, constants.CARD_REGEX.exec(message)[0]);
         } else if (constants.CARD_REGEX.test(message)) {
             logger.debug("[karty] reached| %s", JSON.stringify(constants.CARD_REGEX.exec(message)));
+            logger.debug("[karty] reached, input: %s", message);
             this._makao.play(player, constants.CARD_REGEX.exec(message)[0]);
         } else if (/^ręka\s*$/i.test(message)) {
             this._makao.showHand(player);
