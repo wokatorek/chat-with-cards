@@ -44,19 +44,19 @@ module.exports = class Card {
         let value = 0;
         if (cardString.length === 2) {
             if (botUtils.isASuit(cardString[1])) {
-                let suit = cardString[1];
-                let value = botUtils.parseValueFromString(cardString[0]);
+                suit = cardString[1];
+                value = botUtils.parseValueFromString(cardString[0]);
             } else {
-                let suit = cardString[0];
-                let value = botUtils.parseValueFromString(cardString[1]);
+                suit = cardString[0];
+                value = botUtils.parseValueFromString(cardString[1]);
             }
         } else if (cardString.length === 3) {
             if (botUtils.isASuit(cardString[2])) {
-                let suit = cardString[2];
-                let value = botUtils.parseValueFromString(cardString.substring(0, 1));
+                suit = cardString[2];
+                value = botUtils.parseValueFromString(cardString.substring(0, 1));
             } else {
-                let suit = cardString[0];
-                let value = botUtils.parseValueFromString(cardString.substring(1, 2));
+                suit = cardString[0];
+                value = botUtils.parseValueFromString(cardString.substring(1, 2));
             }
         } else {
             logger.error("Unexpected cardString (%s) length: %d", cardString, cardString.length);

@@ -50,7 +50,9 @@ module.exports = class Player {
     }
 
     findCardByString(card) {
+        logger.debug("searching for card %s", card);
         return this._cards.find(value => {
+            logger.debug("trying card %s", value.toString)
             return value.equals(Card.parseFromString(card));
         });
     }
