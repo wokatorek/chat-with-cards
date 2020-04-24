@@ -1,9 +1,9 @@
 TODO:
 MUST:
-- dołącz do gry: najpierw sprawdź, czy taka istnieje!
-- problemy z toString karty?
-- persist state in DB on sigterm
 - zagraj karta karta nie zagrało mi karty (jedna z tych kart to była figura, może to to?)
+- zagraj karta case insensitive
+- dołącz do gry: najpierw sprawdź, czy taka istnieje!
+- persist state in DB on sigterm
 - greet ze statusem (witaj po raz pierwszy, witaj ponownie, czy jesteś w grze, czy masz coś na ręce)
 - komendy specjalne: żądanie (żądam (kolor/karta) albo kolor (kolor) albo karta (karta))
 - bezpłciowe broadcasty
@@ -17,6 +17,8 @@ SHOULD:
 - auth status and panic
 
 COULD:
+- eslint?
+- zagraj karta verbose suit names
 - ludzkie info ile dobrałeś kart zanim napiszesz jakie karty
 - transtlations + language picking?
 - tutorial video/w chacie?

@@ -51,9 +51,9 @@ module.exports = class Player {
     findCardByString(card) {
         return this._cards.find(value => {
             if (card.length === 2) {
-                return value.value == card[0] && value.suit.codePointAt(0) === card.codePointAt(1) || value.value == card[1] && value.suit.codePointAt(0) === card.codePointAt(0);
+                return value.value.toUpperCase() == card[0].toUpperCase() && value.suit.codePointAt(0) === card.codePointAt(1) || value.value.toUpperCase() == card[1].toUpperCase() && value.suit.codePointAt(0) === card.codePointAt(0);
             } else if (card.length === 3) {
-                return value.value == (card[0] + card[1]) && value.suit.codePointAt(0) === card.codePointAt(2) || value.value == (card[1] + card[2]) && value.suit.codePointAt(0) === card.codePointAt(0);
+                return value.value.toUpperCase() == card.substring(0,1).toUpperCase() && value.suit.codePointAt(0) === card.codePointAt(2) || value.value.toUpperCase() == card.substring(1,2).toUpperCase() && value.suit.codePointAt(0) === card.codePointAt(0);
             }
         });
     }
