@@ -1,6 +1,6 @@
 const logger = require('../utils/logging').getLogger('card');
 const constants = require('../utils/constants');
-const makaoUtils = require('../utils/makaoUtils');
+const botUtils = require('../utils/botUtils');
 const util = require('util');
 
 module.exports = class Card {
@@ -43,20 +43,20 @@ module.exports = class Card {
         let suit = "";
         let value = 0;
         if (cardString.length === 2) {
-            if (makaoUtils.isASuit(cardString[1])) {
+            if (botUtils.isASuit(cardString[1])) {
                 let suit = cardString[1];
-                let value = makaoUtils.parseValueFromString(cardString[0]);
+                let value = botUtils.parseValueFromString(cardString[0]);
             } else {
                 let suit = cardString[0];
-                let value = makaoUtils.parseValueFromString(cardString[1]);
+                let value = botUtils.parseValueFromString(cardString[1]);
             }
         } else if (cardString.length === 3) {
-            if (makaoUtils.isASuit(cardString[2])) {
+            if (botUtils.isASuit(cardString[2])) {
                 let suit = cardString[2];
-                let value = makaoUtils.parseValueFromString(cardString.substring(0, 1));
+                let value = botUtils.parseValueFromString(cardString.substring(0, 1));
             } else {
                 let suit = cardString[0];
-                let value = makaoUtils.parseValueFromString(cardString.substring(1, 2));
+                let value = botUtils.parseValueFromString(cardString.substring(1, 2));
             }
         } else {
             logger.error("Unexpected cardString (%s) length: %d", cardString, cardString.length);

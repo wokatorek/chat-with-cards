@@ -2,7 +2,7 @@ const logger = require('../utils/logging').getLogger('makao');
 const constants = require('../utils/constants');
 const Player = require('./player');
 const Game = require('./game');
-const makaoUtils = require('../utils/makaoUtils');
+const botUtils = require('../utils/botUtils');
 const util = require('util');
 const sendApi = require('../api/fb_send_api');
 const db = require('../db/db').pool;
@@ -111,9 +111,9 @@ module.exports = class Makao {
     }
 
     getUniqueGameId() {
-        let newId = makaoUtils.getRndInteger(10, 99);
+        let newId = botUtils.getRndInteger(10, 99);
         while (!this.isGameIdUnique(newId)) {
-            newId = makaoUtils.getRndInteger(10, 99);
+            newId = botUtils.getRndInteger(10, 99);
         }
         return newId;
     }

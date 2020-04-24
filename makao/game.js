@@ -2,7 +2,7 @@ const logger = require('../utils/logging').getLogger('game');
 const Card = require('./card');
 const sendApi = require('../api/fb_send_api');
 const util = require('util');
-const makaoUtils = require('../utils/makaoUtils');
+const botUtils = require('../utils/botUtils');
 
 module.exports = class Game {
     constructor(id, owner, decks) {
@@ -14,7 +14,7 @@ module.exports = class Game {
         for (let i = 0; i < decks - 1; i++) {
             this._deck.push(Card.getFullDeck());
         }
-        this._deck = makaoUtils.shuffle(this._deck);
+        this._deck = botUtils.shuffle(this._deck);
         this._stack = [];
         logger.info("Game %d created", id);
     }
@@ -163,7 +163,7 @@ module.exports = class Game {
     throwCardsBackInDeck(cards = null) {
         if (cards != null) {
             this._deck.push(...cards);
-            this._deck = makaoUtils.shuffle(this._deck);
+            this._deck = botUtils.shuffle(this._deck);
         }
     }
 
@@ -177,7 +177,7 @@ module.exports = class Game {
         removed.forEach(card_player => {
             removedCards.push(card_player.card);
         });
-        removedCards = makaoUtils.shuffle(removedCards);
+        removedCards = botUtils.shuffle(removedCards);
         this._deck = this._deck.concat(removedCards);
         sendApi.sendMessage(player.id, "Przetasowałeś zagrane karty.");
         this.broadcastApart(util.format("%s przetasował stos zagranych kart.", player.profile.firstName), player);

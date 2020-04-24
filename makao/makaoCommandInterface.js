@@ -1,6 +1,6 @@
 const logger = require('../utils/logging').getLogger('makaoCommandInterface');
 const constants = require('../utils/constants');
-const makaoUtils = require('../utils/makaoUtils');
+const botUtils = require('../utils/botUtils');
 const util = require('util');
 const sendApi = require('../api/fb_send_api');
 const Makao = require('./makao');
