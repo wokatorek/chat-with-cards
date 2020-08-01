@@ -74,4 +74,8 @@ module.exports = class Player {
         });
         return hand
     }
+
+    clearCards() {
+        this._cards = [];
+    }
 };
