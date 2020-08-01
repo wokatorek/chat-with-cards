@@ -19,7 +19,7 @@ adminUsers[constants.ADMIN_USERNAME] = constants.ADMIN_PASSWORD;
 
 let adminAuth = basicAuth({
     "users": adminUsers,
-    challenge: true;
+    challenge: true
 });
 
 router2.get('/', (req, res) => {
