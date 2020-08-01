@@ -177,9 +177,9 @@ module.exports = class Makao {
 
     showHand(player) {
         if (player.handIsEmpty()) {
-            this.sendMessage(player.id, "Nie masz kart na ręku")
+            this.sendMessage(player.id, "Nie masz żadnych kart")
         } else {
-            this.sendMessage(player.id, util.format("Masz na ręku: %s", player.getHandString()));
+            this.sendMessage(player.id, util.format("Masz karty: %s", player.getHandString()));
         }
     }
 

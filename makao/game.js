@@ -82,7 +82,7 @@ module.exports = class Game {
             return;
         }
         if (cards === null && player._cards.length > 1) {
-            sendApi.sendMessage(player.id, util.format("Masz więcej niż jedną kartę. Powtórz komendę ze wskazaniem karty którą chcesz zagrać.\nNa ręku masz %s", player.getHandString()));
+            sendApi.sendMessage(player.id, util.format("Masz więcej niż jedną kartę. Powtórz komendę ze wskazaniem karty którą chcesz zagrać.\nW ręce masz: %s", player.getHandString()));
             return;
         }
         let playedCards = [];
