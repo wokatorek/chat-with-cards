@@ -1,7 +1,5 @@
 TODO:
 MUST:
-- zagraj karta karta nie zagrało mi karty (jedna z tych kart to była figura, może to to?)
-- zagraj karta case insensitive
 - dołącz do gry: najpierw sprawdź, czy taka istnieje!
 - dołącz do gry: a co jeśli należę już do tej gry? :p
 - persist state in DB on sigterm
@@ -19,7 +17,7 @@ SHOULD:
 
 COULD:
 - eslint?
-- zagraj karta verbose suit names
+- lepsze zagraj: rozpoznanie komendy nawet ze złą kartą, verbose or symbolic (<3, <>, ) suit names,
 - ludzkie info ile dobrałeś kart zanim napiszesz jakie karty
 - transtlations + language picking?
 - tutorial video/w chacie?

@@ -108,7 +108,7 @@ module.exports = class Game {
             playedCards.forEach(card => {
                 playedCardsString += util.format(" [%s%s]", card.value, card.suit);
             })
-            sendApi.sendMessage(player.id, util.format("Zagrałeś%s", playedCardsString));
+            sendApi.sendMessage(player.id, util.format("Zagrałeś %s", playedCardsString));
             this.broadcastApart(util.format("%s zagrał %s", player.firstName, cards), player);
         }
     }
