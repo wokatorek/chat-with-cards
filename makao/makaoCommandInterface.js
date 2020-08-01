@@ -20,8 +20,8 @@ module.exports = class MakaoCommandInterface {
             this._makao.createGame(player, 1);
         } else if (/^nowa \d+$/i.test(message)) {
             this._makao.createGame(player, /^nowa (\d+)$/i.exec(message)[1]);
-        } else if (/^dołącz \d+$/i.test(message)) {
-            this._makao.joinGame(player, /^dołącz (\d+)$/i.exec(message)[1]);
+        } else if (/^do[lł][aą]cz \d+$/i.test(message)) {
+            this._makao.joinGame(player, /^doł[aą]cz (\d+)$/i.exec(message)[1]);
         } else if (/^pomoc\s*$/i.test(message)) {
             this._makao.sendMessage(sender_psid, constants.HELP_MORE);
         } else if (/^pomoc ([a-zA-ZąćęółńśżźĄĆĘÓŁŃŚŻŹ]+)\s*$/i.test(message)) {
@@ -40,7 +40,7 @@ module.exports = class MakaoCommandInterface {
             logger.debug("[karty] reached| %s", JSON.stringify(constants.CARD_REGEX.exec(message)));
             logger.debug("[karty] reached, input: %s", message);
             this._makao.play(player, constants.CARD_REGEX.exec(message)[0]);
-        } else if (/^ręka\s*$/i.test(message)) {
+        } else if (/^r[eę]ka\s*$/i.test(message)) {
             this._makao.showHand(player);
         } else if (/^cofnij\s*$/i.test(message)) {
             this._makao.undo(player);
