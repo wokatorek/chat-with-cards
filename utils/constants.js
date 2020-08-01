@@ -1,5 +1,7 @@
 exports.FB_PAGE_TOKEN = process.env.FB_PAGE_TOKEN;
 exports.VERIFY_TOKEN = process.env.VERIFY_TOKEN;
+exports.ADMIN_USERNAME = process.env.ADMIN_USERNAME;
+exports.ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
 exports.DB_HOST = process.env.DB_HOST;
 exports.DB_PORT = process.env.DB_PORT;
 exports.DB_PASSWORD = process.env.DB_PASSWORD;

@@ -10,36 +10,49 @@ const constants = require('./utils/constants');
 const Makao = require('./makao/makao');
 const makao = new Makao();
 const db = require('./db/db').pool;
+const basicAuth = require('express-basic-auth');
+const router1 = express.Router();
+const router2 = express.Router();
 
-app.get('/', (req, res) => {
+let adminUsers = [];
+adminUsers[constants.ADMIN_USERNAME] = constants.ADMIN_PASSWORD;
+
+let adminAuth = basicAuth({
+    "users": adminUsers
+});
+
+router2.get('/', (req, res) => {
    logger.info('Sending status!');
     res.send(makao.status())
 });
 
-app.get('/privacy-policy', (req, res) => {
+router1.get('/privacy-policy', (req, res) => {
     res.send(constants.PRIVACY_POLICY);
 });
 
-app.post('/webhook', fbHandler.handleWebhookPost);
+router1.post('/webhook', fbHandler.handleWebhookPost);
 
-app.get('/webhook', fbHandler.handleWebhookGet);
+router1.get('/webhook', fbHandler.handleWebhookGet);
 
-app.get('/makao', (req, res) => {
+router2.get('/makao', (req, res) => {
     logger.info("Somebody requested makao!!");
     res.send("ok");
 });
 
-app.get('/profile', (req, res) => {
+router2.get('/profile', (req, res) => {
     logger.info("Somebody requested profile!!");
     profileApi.setProfile();
     res.send("ok");
 });
 
-app.get('/makao/panic', (req, res) => {
+router2.get('/panic', (req, res) => {
     logger.info("Shutdown all games");
     makao.shutdown();
     res.send("ok");
 });
+
+app.use('/', router1);
+app.use('/makao', adminAuth, router2);
 
 const server = http.createServer(app).listen(constants.HOST_PORT, constants.HOST_IP, function () {
     printBanner();

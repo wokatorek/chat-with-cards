@@ -1,6 +1,5 @@
 TODO:
 MUST:
-- persist state in DB on sigterm
 - greet ze statusem (witaj po raz pierwszy, witaj ponownie, czy jesteś w grze, czy masz coś na ręce)
 - komendy specjalne: żądanie (żądam (kolor/karta) albo kolor (kolor) albo karta (karta))
 - bezpłciowe broadcasty
@@ -10,6 +9,7 @@ MUST:
 - command to leave game
 
 SHOULD:
+- persist state in DB on sigterm
 - handle postback differently
 - auth status and panic
 
