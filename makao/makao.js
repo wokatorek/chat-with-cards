@@ -55,7 +55,9 @@ module.exports = class Makao {
             this.sendMessage(player.id, util.format("Gra numer %d nie istnieje", id));
         } else {
             if(game.isPlaying(player)){
+                logger.info("User " + player.id + " is already playing in a game with id " + id);
                 this.sendMessage(player.id, util.format("Należysz już do gry %d!", id));
+                return
             }
             this.leaveCurrentGame(player);
             game.addPlayer(player);
