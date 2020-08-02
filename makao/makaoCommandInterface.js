@@ -50,6 +50,10 @@ module.exports = class MakaoCommandInterface {
             this._makao.showPlayers(player);
         } else if (/^przetasuj\s*$/i.test(message)) {
             this._makao.shuffleStack(player);
+        } else if (/^[żz][ąa]dam\s*/i.test(message)) {
+            this._makao.sendMessage(sender_psid, util.format("Ta funkcja nie jest jeszcze zaimplementowana."));
+        } else if (/^propozycja:/i.test(message)) {
+            this._makao.sendMessage(sender_psid, util.format("Ta funkcja nie jest jeszcze zaimplementowana."));
         } else {
             logger.info('Message %s from user %d did not match any command.', message, sender_psid);
             if (player.needsGreet) {
