@@ -51,9 +51,11 @@ module.exports = class MakaoCommandInterface {
         } else if (/^przetasuj\s*$/i.test(message)) {
             this._makao.shuffleStack(player);
         } else if (/^[żz][ąa]dam\s*/i.test(message)) {
+            this._makao.request(player, /^[żz][ąa]dam\s*(.+)\s*$/i.exec(message)[1]);
             this._makao.sendMessage(sender_psid, util.format("Ta funkcja nie jest jeszcze zaimplementowana."));
         } else if (/^propozycja:/i.test(message)) {
-            this._makao.sendMessage(sender_psid, util.format("Ta funkcja nie jest jeszcze zaimplementowana."));
+            //send message to admin
+            this._makao.sendMessage(2907394745984376, util.format("User: [%s]\nSuggestion: %s", player.toString(), /^propozycja:\s*(.+)\s*$/i.exec(message)[1]));
         } else {
             logger.info('Message %s from user %d did not match any command.', message, sender_psid);
             if (player.needsGreet) {

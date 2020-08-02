@@ -193,6 +193,16 @@ module.exports = class Makao {
         }
     }
 
+    request(player, request) {
+        let game = this.findGameByUser(player);
+        if (game) {
+            logger.info("User %d requests: %s", player.id, request);
+            game.broadcast(util.format("%s żąda: %s", player.firstName, request));
+        } else {
+            sendApi.sendMessage(player.id, "Nie należysz do żadnej gry");
+        }
+    }
+
     setPlayerIsGreeted(player) {
         player.needsGreet = false;
         let index = this._users.findIndex(value => {
