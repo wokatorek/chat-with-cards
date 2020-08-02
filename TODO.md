@@ -2,7 +2,6 @@ TODO:
 MUST:
 - komendy specjalne: żądanie (żądam (kolor/karta) albo kolor (kolor) albo karta (karta))
 - bezpłciowe broadcasty
-- "ręka" leaks who played last card
 - help \<command>
 - command to leave game
 
