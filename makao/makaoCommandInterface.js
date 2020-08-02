@@ -53,6 +53,7 @@ module.exports = class MakaoCommandInterface {
             this._makao.sendMessage(sender_psid, util.format("Dzięki za sugestię. Przekazałem ją adminowi."));
         } else if (/^opu[sś][cć] gr[eę]|wyjd[zź] z gry|wyjd[zź]/i.test(message)) {
             this._makao.leaveCurrentGame(player);
+            this._makao.sendMessage(sender_psid, util.format("Opuściłeś grę."));
         } else {
             logger.info('Message %s from user %d did not match any command.', message, sender_psid);
             if (player.needsGreet) {
