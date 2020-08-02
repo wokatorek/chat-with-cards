@@ -31,14 +31,10 @@ module.exports = class MakaoCommandInterface {
         } else if (/^dobierz \d+$/i.test(message)) {
             this._makao.draw(player, /^dobierz (\d+)$/i.exec(message)[1]);
         } else if (/^zagraj\s*$/i.test(message)) {
-            logger.debug("zagraj[stop] reached");
             this._makao.play(player, null);
         } else if (/^zagraj\s*/i.test(message) && constants.CARD_REGEX.test(message)) {
-            logger.debug("zagraj [karty] reached| %s", JSON.stringify(constants.CARD_REGEX.exec(message)));
             this._makao.play(player, constants.CARD_REGEX.exec(message)[0]);
         } else if (constants.CARD_REGEX.test(message)) {
-            logger.debug("[karty] reached| %s", JSON.stringify(constants.CARD_REGEX.exec(message)));
-            logger.debug("[karty] reached, input: %s", message);
             this._makao.play(player, constants.CARD_REGEX.exec(message)[0]);
         } else if (/^r[eę]ka\s*$/i.test(message)) {
             this._makao.showHand(player);

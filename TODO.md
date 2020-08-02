@@ -1,12 +1,12 @@
 TODO:
 MUST:
-- help \<command>
 
 SHOULD:
 - persist state in DB on sigterm
 - handle postback better(?)
 
 COULD:
+- help \<command>
 - sugestie
 - greet ze statusem (witaj po raz pierwszy, witaj ponownie, czy jesteś w grze, czy masz coś na ręce)
 - eslint?
