@@ -22,11 +22,6 @@ let adminAuth = basicAuth({
     challenge: true
 });
 
-router2.get('/', (req, res) => {
-   logger.info('Sending status!');
-    res.send(makao.status())
-});
-
 router1.get('/privacy-policy', (req, res) => {
     res.send(constants.PRIVACY_POLICY);
 });
@@ -34,6 +29,11 @@ router1.get('/privacy-policy', (req, res) => {
 router1.post('/webhook', fbHandler.handleWebhookPost);
 
 router1.get('/webhook', fbHandler.handleWebhookGet);
+
+router2.get('/', (req, res) => {
+    logger.info('Sending status!');
+    res.send(makao.status())
+});
 
 router2.get('/makao', (req, res) => {
     logger.info("Somebody requested makao!!");
