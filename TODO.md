@@ -1,8 +1,6 @@
 TODO:
 MUST:
-- komendy specjalne: żądanie (żądam (kolor/karta) albo kolor (kolor) albo karta (karta))
 - help \<command>
-- command to leave game
 
 SHOULD:
 - persist state in DB on sigterm
