@@ -62,7 +62,7 @@ module.exports = class Game {
         let thePlayer = this._players[this.getPlayerIndex(player)];
         let cardsString = "";
         if(n >= this._deck.length) {
-            sendApi.sendMessage(player.id, util.format("Nie możesz dobrać %d kart, na stosie zostało %d kart do dobrania. Spróbuj przetasować stos kart odrzuconych.", n, this._deck.length));
+            sendApi.sendMessage(player.id, util.format("Nie możesz dobrać %d kart, na stosie zostało do dobrania tylko %d. Spróbuj przetasować stos kart odrzuconych.", n, this._deck.length));
             return
         }
         for (let i = 0; i < n; i++) {
