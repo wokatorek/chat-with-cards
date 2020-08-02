@@ -1,7 +1,6 @@
 TODO:
 MUST:
 - komendy specjalne: żądanie (żądam (kolor/karta) albo kolor (kolor) albo karta (karta))
-- bezpłciowe broadcasty
 - help \<command>
 - command to leave game
 
@@ -10,6 +9,7 @@ SHOULD:
 - handle postback better(?)
 
 COULD:
+- sugestie
 - greet ze statusem (witaj po raz pierwszy, witaj ponownie, czy jesteś w grze, czy masz coś na ręce)
 - eslint?
 - lepsze zagraj: rozpoznanie komendy nawet ze złą kartą, verbose or symbolic (<3, <>, ) suit names,

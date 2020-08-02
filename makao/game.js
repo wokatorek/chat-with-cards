@@ -33,7 +33,7 @@ module.exports = class Game {
         let counter = 10;
         function broadcastAddPlayerWhenProfileExists() {
             if (player.profile) {
-                game.broadcastApart(util.format("%s dołączył do gry!", player.firstName), player);
+                game.broadcastApart(util.format("%s dołącza do gry!", player.firstName), player);
             } else {
                 counter--;
                 if(counter <= 0){
@@ -71,8 +71,8 @@ module.exports = class Game {
             cardsString += util.format("[%s%s] ", card.value, card.suit);
         }
         this.savePlayer(thePlayer);
-        this.broadcastApart(util.format("%s dobrał %d kart", player.firstName, n), player);
-        sendApi.sendMessage(player.id, util.format("Dobrałeś: %s", cardsString));
+        this.broadcastApart(util.format("%s dobrał/a %d kart", player.firstName, n), player);
+        sendApi.sendMessage(player.id, util.format("Dobrano: %s", cardsString));
     }
 
     savePlayer(player) {
@@ -112,8 +112,8 @@ module.exports = class Game {
             playedCards.forEach(card => {
                 playedCardsString += util.format(" [%s%s]", card.value, card.suit);
             })
-            sendApi.sendMessage(player.id, util.format("Zagrałeś %s", playedCardsString));
-            this.broadcastApart(util.format("%s zagrał %s", player.firstName, cards), player);
+            sendApi.sendMessage(player.id, util.format("Zostały zagrane karty: %s", playedCardsString));
+            this.broadcastApart(util.format("%s zagrał/a %s", player.firstName, cards), player);
         }
     }
 
@@ -127,8 +127,8 @@ module.exports = class Game {
             let thePlayer = this._players[this.getPlayerIndex(player)];
             thePlayer.drawCard(cardObject.card);
             this.savePlayer(thePlayer);
-            this.broadcastApart(util.format("%s cofnął ostatnią zagraną kartę", player.firstName), player);
-            sendApi.sendMessage(player.id, util.format("Cofnąłeś zagranie karty: %s", util.format("[%s%s] ", cardObject.card.value, cardObject.card.suit)));
+            this.broadcastApart(util.format("%s cofnął/ęłą ostatnią zagraną kartę", player.firstName), player);
+            sendApi.sendMessage(player.id, util.format("Cofnięto zagranie karty: %s", util.format("[%s%s] ", cardObject.card.value, cardObject.card.suit)));
         } else {
             this._stack.push(cardObject);
             sendApi.sendMessage(player.id, "Karta na szczycie stosu nie została zagrana przez Ciebie");
@@ -157,7 +157,7 @@ module.exports = class Game {
             this.throwCardsBackInDeck(this._players[index].cards);
             this._players[index].clearCards();
             this._players.splice(index, 1);
-            this.broadcast(util.format("%s opuścił grę.", player.firstName));
+            this.broadcast(util.format("%s opuścił/a grę.", player.firstName));
             if (this._owner.id === player._id) {
                 this.moveOwnership();
             }
@@ -183,14 +183,14 @@ module.exports = class Game {
         });
         removedCards = botUtils.shuffle(removedCards);
         this._deck = this._deck.concat(removedCards);
-        sendApi.sendMessage(player.id, "Przetasowałeś zagrane karty.");
-        this.broadcastApart(util.format("%s przetasował stos zagranych kart.", player.profile.firstName), player);
+        sendApi.sendMessage(player.id, "Zagrane karty zostały przetasowane.");
+        this.broadcastApart(util.format("%s przetasował/a stos zagranych kart.", player.profile.firstName), player);
     }
 
     moveOwnership() {
         if (this._players.length > 0) {
             this._owner = this._players[0];
-            this.broadcast(util.format("%s jest nowym właścicielem gry.", this._owner.firstName));
+            this.broadcast(util.format("%s jest nowym właścicielem/ką gry.", this._owner.firstName));
         } else {
             this._shouldBeDestroyed = true;
         }
