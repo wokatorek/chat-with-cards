@@ -24,7 +24,8 @@ Aby dowiedzieć się więcej napisz "pomoc (komenda)"
 - kto gra
 - przetasuj
 - żądam [kolor/figura]
-- propozycja [sugestia do automatu]`;
+- propozycja [sugestia do automatu]
+- opuść grę/wyjdź z gry`;
 exports.HELP_SHUFFLE_STACK = "Zabiera ze stosu wszystkie karty oprócz leżącej na wierzchu, tasuje i wkłada na spód talii; nie można przetasować gdy na stosie jest tylko jedna karta.";
 exports.SUITS = {CLUB: '\u2663', DIAMOND: '\u2666', HEART: '\u2665', SPADE: '\u2660'};
 exports.CARD_REGEX = /(([AaKkJjQq][♠♣♥♦❤️\u2660\u2663\u2665\u2666]\s?)+|([2-9][♠♣♥♦❤️\u2660\u2663\u2665\u2666]\s?)+|(10[♠♣♥♦❤️\u2660\u2663\u2665\u2666]\s?)+|([♠♣♥♦❤️\u2660\u2663\u2665\u2666][AaKkJjQq]\s?)+|([♠♣♥♦❤️\u2660\u2663\u2665\u2666][2-9]\s?)+|([♠♣♥♦❤️\u2660\u2663\u2665\u2666]10\s?)+)+/i;
