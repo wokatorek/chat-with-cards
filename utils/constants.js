@@ -24,7 +24,7 @@ Aby dowiedzieć się więcej napisz "pomoc (komenda)"
 - kto gra
 - przetasuj
 - żądam [kolor/figura]
-- propozycja [sugestia do automatu]
+- propozycja [sugestia dot. implementacji, pomysł na nową komendę/funkcję/zmianę/poprawkę]
 - opuść grę/wyjdź z gry`;
 exports.HELP_SHUFFLE_STACK = "Zabiera ze stosu wszystkie karty oprócz leżącej na wierzchu, tasuje i wkłada na spód talii; nie można przetasować gdy na stosie jest tylko jedna karta.";
 exports.SUITS = {CLUB: '\u2663', DIAMOND: '\u2666', HEART: '\u2665', SPADE: '\u2660'};
