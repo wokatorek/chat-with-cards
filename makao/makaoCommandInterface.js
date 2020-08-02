@@ -56,7 +56,7 @@ module.exports = class MakaoCommandInterface {
             this._makao.sendMessage(2907394745984376, util.format("User: %s\nSuggestion: %s", JSON.stringify(player), /^propozycja:\s*(.+)\s*$/i.exec(message)[1]));
             this._makao.sendMessage(sender_psid, util.format("Dzięki za sugestię. Przekazałem ją adminowi."));
         } else if (/^opu[sś][cć] gr[eę]|wyjd[zź] z gry|wyjd[zź]/i.test(message)) {
-            this._makao.sendMessage(sender_psid, util.format("Ta funkcja nie jest jeszcze zaimplementowana."));
+            this._makao.leaveCurrentGame(player);
         } else {
             logger.info('Message %s from user %d did not match any command.', message, sender_psid);
             if (player.needsGreet) {
